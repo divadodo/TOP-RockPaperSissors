@@ -8,26 +8,31 @@
 <body>
 
   <script>
-    var computerChoise = '';
-    var playerChoise = prompt("Type your Choise", "Rock Paper or Sissors");
+    var computerChoice = '';
+    var playerChoice = '';
 
-    function getComputerChoise() {
+    function getComputerChoice() {
       const ranNum = Math.random();
       if (ranNum <= 0.333) {
-        computerChoise = 'Rock';
+        computerChoice = 'Rock';
       } else if (ranNum >= 0.666) {
-        computerChoise = 'Paper';
+        computerChoice = 'Paper';
       } else {
-        computerChoise = 'Sissors';
+        computerChoice = 'Sissors';
       }
-      return computerChoise;
+      return computerChoice;
     }
 
 
+    function getPlayerChoice() {
+      playerChoice = prompt("Type your Choice", "Rock Paper or Sissors");
+    }
 
-
-    console.log(getComputerChoise());
-    console.log(playerChoise);
+    
+    getPlayerChoice();
+    getComputerChoice();
+    console.log(computerChoice);
+    console.log(playerChoice);
   </script>
 
 </body>
