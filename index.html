@@ -30,11 +30,30 @@
       playerChoice = prompt("Type your Choice", "Rock Paper or Sissors");
     }
 
-    
-    getPlayerChoice();
-    getComputerChoice();
-    console.log(computerChoice);
-    console.log(playerChoice);
+
+    function playRound(player, computer) {
+      getPlayerChoice();
+      getComputerChoice();
+      if (playerChoice == computerChoice){
+        alert("Draw");
+      } else if (playerChoice == 'Rock' && computerChoice == 'Sissors') {
+        alert("Win");
+      } else if (playerChoice == 'Paper' && computerChoice == 'Rock') {
+        alert("Win");
+      } else if (playerChoice == 'Sissors' && computerChoice == 'Paper') {
+        alert("Win");
+      } else {
+        alert('Lose')
+      }
+    }
+
+
+
+
+
+   playRound(playerChoice, computerChoice);
+   console.log(playerChoice);
+   console.log(computerChoice);
   </script>
 
 </body>
