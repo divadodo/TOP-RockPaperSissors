@@ -8,7 +8,25 @@
 <body>
 
   <script>
-    console.log("Hello World")
+    var comPick = '';
+
+    function computerChoise() {
+      
+      const ranNum = Math.random();
+      if (ranNum <= 0.333) {
+        comPick = 'Rock';
+      } else if (ranNum >= 0.666) {
+        comPick = 'Paper';
+      } else {
+        comPick = 'Sissors';
+      }
+      return comPick;
+    }
+
+
+
+
+    console.log(computerChoise());
   </script>
 
 </body>
