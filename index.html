@@ -12,6 +12,7 @@
     var playerChoice = '';
     var playerScore = 0;
     var computerScore = 0;
+    var round = 0;
 
     function getComputerChoice() {
       const ranNum = Math.random();
@@ -32,10 +33,11 @@
 
 
     function playRound() {
+      round++;
       getPlayerChoice();
       getComputerChoice();
       if (playerChoice == computerChoice){
-        alert("Draw");
+        roundDraw();
       } else if (playerChoice == 'Rock' && computerChoice == 'Sissors') {
         roundWin();
       } else if (playerChoice == 'Paper' && computerChoice == 'Rock') {
@@ -50,14 +52,41 @@
     function roundWin() {
       playerScore++;
       alert("WIN\n Player Chose " + playerChoice + " Computer Chose " + computerChoice + "\n Score: Player: " + playerScore + " Computer: " + computerScore);
-      playRound();
+      checkRound();
     }
 
 
     function roundLose() {
       computerScore++;
       alert("LOSS\n Player Chose " + playerChoice + " Computer Chose " + computerChoice + "\n Score: Player: " + playerScore + " Computer: " + computerScore);
-      playRound();
+      checkRound();
+    }
+
+    function roundDraw() {
+      alert("Draw")
+      checkRound();
+    }
+
+
+    function checkRound() {
+      if (round > 5) {
+        gameOver();
+      } else {
+        playRound();
+      }
+    }
+
+    function gameOver() {
+      if (playerScore > computerScore) {
+        alert("Winner Winner")
+      } else {
+        alert("Loooser!!!")
+      }
+    }
+
+    function playGame(){
+      checkRound();
+
     }
 
 
