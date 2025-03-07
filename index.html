@@ -31,29 +31,42 @@
     }
 
 
-    function playRound(player, computer) {
+    function playRound() {
       getPlayerChoice();
       getComputerChoice();
       if (playerChoice == computerChoice){
         alert("Draw");
       } else if (playerChoice == 'Rock' && computerChoice == 'Sissors') {
-        alert("Win");
+        roundWin();
       } else if (playerChoice == 'Paper' && computerChoice == 'Rock') {
-        alert("Win");
+        roundWin();
       } else if (playerChoice == 'Sissors' && computerChoice == 'Paper') {
-        alert("Win");
+        roundWin();
       } else {
-        alert('Lose')
+        roundLose();
       }
     }
 
+    function roundWin() {
+      playerScore++;
+      alert("WIN\n Player Chose " + playerChoice + " Computer Chose " + computerChoice + "\n Score: Player: " + playerScore + " Computer: " + computerScore);
+      playRound();
+    }
 
+
+    function roundLose() {
+      computerScore++;
+      alert("LOSS\n Player Chose " + playerChoice + " Computer Chose " + computerChoice + "\n Score: Player: " + playerScore + " Computer: " + computerScore);
+      playRound();
+    }
 
 
 
    playRound(playerChoice, computerChoice);
    console.log(playerChoice);
    console.log(computerChoice);
+   console.log(playerScore);
+   console.log(computerScore)
   </script>
 
 </body>
